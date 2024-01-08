@@ -94,7 +94,7 @@ function getNameAndDuration(videoSelector, durationSelector) {
     let durationElem = document.querySelectorAll(durationSelector);
 
     let currentList = [];
-    for (let i = 0; i < durationElem.length; i++){
+    for (let i = 0; i < durationElem.length; i++) {
         let videoTitle = viddeoElem[i].innerText;
         let duration = durationElem[i].innerText;
         currentList.push({ videoTitle, duration });

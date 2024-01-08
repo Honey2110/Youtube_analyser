@@ -14,4 +14,4 @@ This script will analyse the specific playlist and will show
 
 For Example : <br>
 On 5th line of the script.js file change the playlist with anything you want like
-const Playlist = "https://www.youtube.com/playlist?list=PL-Jc9J83PIiGT2wmeqRM6ZcjdsqlFvDMz";
+const Playlist = " ANY PLAYLIST LINK YOU WANTED TO ANALYSE";

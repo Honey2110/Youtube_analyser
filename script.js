@@ -20,11 +20,11 @@ let cTab;
         let allTabsArr = await browserinstance.pages();
         cTab = allTabsArr[0];
         await cTab.goto(Playlist);
-        let name = await cTab.evaluate(function (select) { return document.querySelector(select).innerHTML }, 'div[id="container"] yt-formatted-string[disable-attributed-string]');
+        let name = await cTab.evaluate(function (select) { return document.querySelector(select).innerText }, 'div[id="container"] yt-formatted-string[disable-attributed-string]');
 
         let allData = await cTab.evaluate(getdata, ".metadata-stats.style-scope.ytd-playlist-byline-renderer");
 
-        console.log(`Name of the playlist ${name}, further details ${allData.noOfVideos_views}`);
+        console.log(`Name of the playlist : ${name}', further details : '${allData.noOfVideos_views}'`);
 
         // let alldata = await cTab.evaluate(function (select) { return document.querySelector(select).innerText }, '.metadata-stats.style-scope.ytd-playlist-byline-renderer');
         // let datatoget = alldata.split(" ")
@@ -61,7 +61,6 @@ let cTab;
 function getdata(selector) {
     let allElements = document.querySelectorAll(selector);
     let noOfVideos_views = allElements[0].innerText;
-    // let noOfViews = allElements[1].innerText;
 
     return {
         noOfVideos_views
@@ -94,10 +93,12 @@ function getNameAndDuration(videoSelector, durationSelector) {
     let durationElem = document.querySelectorAll(durationSelector);
 
     let currentList = [];
+    
     for (let i = 0; i < durationElem.length; i++) {
         let videoTitle = viddeoElem[i].innerText;
         let duration = durationElem[i].innerText;
         currentList.push({ videoTitle, duration });
     }
+    
     return currentList;
 }

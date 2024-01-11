@@ -14,4 +14,4 @@ This script will analyse the specific playlist and will show
 
 For Example : <br>
 On 5th line of the script.js file change the playlist with anything you want like
-const Playlist = " ANY PLAYLIST LINK ";
+const Playlist = " ANY PLAYLIST LINK YOU WANTED TO ANALYSE";
